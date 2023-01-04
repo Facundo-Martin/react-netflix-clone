@@ -6,10 +6,18 @@ const HomeScreen = () => {
     <div>
       {/* Navbar */}
       <Navbar />
-
+      <h1>Scroll</h1>
+      <h1>Scroll</h1>
+      <h1>Scroll</h1>
+      <h1>Scroll</h1>
+      <h1>Scroll</h1>
+      <h1>Scroll</h1>
+      <h1>Scroll</h1>
+      <h1>Scroll</h1>
+      <h1>Scroll</h1>
+      <h1>Scroll</h1>
       {/* Banner */}
       <Banner />
-
       {/* Row */}
     </div>
   );

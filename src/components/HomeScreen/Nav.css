@@ -3,9 +3,13 @@
   top: 0;
   width: 100%;
   z-index: 100;
+  transition: all;
+  transition-duration: 0.6s;
 }
 .nav__black {
   background-color: #111;
+  transition: all;
+  transition-duration: 0.8s;
 }
 
 .nav__contents {
