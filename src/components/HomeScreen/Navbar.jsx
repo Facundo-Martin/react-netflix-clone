@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import useDebouncedEvent from "../../hooks/useDebouncedEvent";
 import "./Nav.css";
 
