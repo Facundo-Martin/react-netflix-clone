@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const useDebounce = (eventName, callback, delay) => {
+const useDebounce = (eventName, callback, delay, stateSetter) => {
   let timer;
 
   const debouncedEvent = () => {
@@ -12,7 +12,7 @@ const useDebounce = (eventName, callback, delay) => {
     window.addEventListener(eventName, debouncedEvent);
 
     return () => window.removeEventListener(eventName, debouncedEvent);
-  }, []);
+  }, [stateSetter]);
 };
 
 export default useDebounce;
