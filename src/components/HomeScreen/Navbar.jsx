@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import React, { useEffect, useState } from "react";
-import useDebounce from "../../hooks/useDebounce";
+import useDebouncedEvent from "../../hooks/useDebouncedEvent";
 import "./Nav.css";
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
     else setShow(false);
   };
 
-  useDebounce("scroll", transitionNavbar, 50);
+  useDebouncedEvent("scroll", transitionNavbar, 50, setShow);
 
   return (
     <div className={clsx("nav", show && "nav__black")}>
