@@ -1,11 +1,10 @@
 import clsx from "clsx";
 import React, { useEffect, useState } from "react";
+import useDebounce from "../../hooks/useDebounce";
 import "./Nav.css";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
-
-  let timer;
 
   const transitionNavbar = () => {
     console.log("scrolling");
@@ -13,17 +12,7 @@ const Navbar = () => {
     else setShow(false);
   };
 
-  const debouncedTransitionNavbar = () => {
-    clearTimeout(timer);
-    timer = setTimeout(transitionNavbar, 250);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", debouncedTransitionNavbar);
-
-    return () =>
-      window.removeEventListener("scroll", debouncedTransitionNavbar);
-  }, [show]);
+  useDebounce("scroll", transitionNavbar, 50);
 
   return (
     <div className={clsx("nav", show && "nav__black")}>
