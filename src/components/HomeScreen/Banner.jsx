@@ -24,7 +24,15 @@ const Banner = () => {
   }, []);
 
   return (
-    <header className="banner">
+    <header
+      className="banner"
+      style={{
+        backgroundSize: "cover",
+        backgroundImage: `url(
+          "https://image.tmdb.org/t/p/original/${movie?.backdrop_path}"
+        )`,
+      }}
+    >
       <div className="banner__contents">
         <h1 className="banner__title">Movie Name</h1>
         <div className="banner__buttons">
