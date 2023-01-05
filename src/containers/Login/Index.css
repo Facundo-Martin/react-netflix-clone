@@ -1,0 +1,47 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  background: url("https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/netflixteaser.png")
+    center no-repeat;
+  background-size: cover;
+}
+
+.login__gradient {
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.login__bg {
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login__logo {
+  z-index: 100;
+  width: 10rem;
+}
+
+.login__button {
+  z-index: 100;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.login__button:hover {
+  background-color: #ef1a25;
+}
