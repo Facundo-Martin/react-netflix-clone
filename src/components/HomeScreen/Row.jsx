@@ -21,14 +21,20 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
     <div className="row">
       <h2>{title}</h2>
       <div className="row__posters">
-        {movies.map((movie) => (
-          <img
-            key={movie.id}
-            className={clsx("row__poster", isLargeRow && "row__posterLarge")}
-            src={baseUrl + movie.poster_path}
-            alt={title}
-          />
-        ))}
+        {movies.map((movie) => {
+          if (movie.poster_path)
+            return (
+              <img
+                key={movie.id}
+                className={clsx(
+                  "row__poster",
+                  isLargeRow && "row__posterLarge"
+                )}
+                src={baseUrl + movie.poster_path}
+                alt={title}
+              />
+            );
+        })}
       </div>
     </div>
   );
