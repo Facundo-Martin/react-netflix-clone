@@ -2,6 +2,7 @@
   height: 450px;
   object-fit: contain;
   color: white;
+  margin-bottom: 15px;
 }
 
 .banner__contents {
@@ -19,7 +20,7 @@
 }
 
 .banner--fadeBottom {
-  height: 7.4rem;
+  height: 7.6rem;
   background-image: linear-gradient(
     180deg,
     transparent,

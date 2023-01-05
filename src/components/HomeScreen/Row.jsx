@@ -25,9 +25,7 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
           <img
             key={movie.id}
             className={clsx("row__poster", isLargeRow && "row__posterLarge")}
-            src={`${baseUrl}${
-              isLargeRow ? movie.poster_path : movie.backdrop_path
-            }`}
+            src={baseUrl + movie.poster_path}
             alt={title}
           />
         ))}
