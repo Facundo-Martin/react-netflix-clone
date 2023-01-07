@@ -1,14 +1,14 @@
 import React from "react";
-import HomeScreen from "./containers/HomeScreen";
+import HomeScreen from "./containers/Home";
 import { Route, Link, Routes } from "react-router-dom";
-import Login from "./containers/Login";
+import LoginScreen from "./containers/Login";
 
 function App() {
   const user = null;
   return (
     <>
       {!user ? (
-        <Login />
+        <LoginScreen />
       ) : (
         <Routes>
           <Route>

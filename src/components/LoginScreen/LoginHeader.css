@@ -1,0 +1,36 @@
+.loginHeader {
+  text-align: center;
+  margin: 0 1rem;
+}
+
+.loginHeader > h3 {
+  margin-top: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.loginHeader__input > form {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginHeader__input > form > input {
+  flex: 1;
+  padding: 0.75rem 0.5rem;
+  outline: none;
+}
+
+.loginHeader__button {
+  padding: 12px 20px;
+  border-radius: 2px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  cursor: pointer;
+}
+
+.loginHeader__button:hover {
+  background-color: #e82a34;
+}
