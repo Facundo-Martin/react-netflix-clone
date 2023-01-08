@@ -39,3 +39,18 @@
 .signup > form > button:hover {
   background-color: #ee2731;
 }
+
+.signup > form > h4 {
+  text-align: left;
+  margin-top: 30px;
+  color: grey;
+}
+
+.signup__span {
+  font-weight: 600;
+  color: white;
+}
+.signup__span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
