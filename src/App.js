@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HomeScreen from "./containers/Home";
-import { Route, Link, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import LoginScreen from "./containers/Login";
+import { auth } from "./firebase";
 
 function App() {
-  const user = null;
+  const [isSignedIn, setIsSignedIn] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setIsSignedIn(true);
+      } else {
+        setIsSignedIn(false);
+      }
+    });
+    return unsubscribe;
+  }, []);
+
   return (
     <>
-      {!user ? (
+      {!isSignedIn ? (
         <LoginScreen />
       ) : (
         <Routes>
