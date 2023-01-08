@@ -9,8 +9,9 @@
 }
 
 .loginHeader__input > form {
-  margin-top: 8px;
+  margin: 8px auto;
   display: flex;
+  max-width: 85%;
   align-items: center;
   justify-content: center;
 }

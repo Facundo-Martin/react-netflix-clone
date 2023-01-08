@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LoginLayout.css";
+import SignUp from "./SignUp";
 
 const Login = ({ children }) => {
+  const [signIn, setSignIn] = useState(false);
   return (
     <div className="login">
       <span className="login__gradient"></span>
@@ -12,9 +14,19 @@ const Login = ({ children }) => {
           className="login__logo"
         />
 
-        <button className="login__button">Sign In</button>
+        <button className="login__button" onClick={() => setSignIn(true)}>
+          Sign In
+        </button>
       </div>
-      <div className="login_children">{children}</div>
+      <div className="login_container">
+        {signIn ? (
+          <SignUp />
+        ) : (
+          React.Children.map(children, (child) =>
+            React.cloneElement(child, { setSignIn })
+          )
+        )}
+      </div>
     </div>
   );
 };
