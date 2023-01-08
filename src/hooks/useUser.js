@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import { selectUser } from "../../features/userSlice";
+import { selectUser } from "../features/userSlice";
 
 const useUser = () => {
-  const user = useSelector(selectUser);
+  const { user } = useSelector(selectUser);
   return user;
 };
 

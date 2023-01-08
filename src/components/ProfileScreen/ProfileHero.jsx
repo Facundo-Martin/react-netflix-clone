@@ -1,10 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectUser } from "../../features/userSlice";
+import useUser from "../../hooks/useUser";
+import Button from "../UI/Button";
+
 import "./ProfileHero.css";
 
 const ProfileHero = () => {
-  const user = useSelector(selectUser);
+  const user = useUser();
+  console.log(user, "User");
+
   return (
     <div className="profilehero">
       <h1>Edit Profile</h1>
@@ -16,6 +19,7 @@ const ProfileHero = () => {
         />
         <div className="profilehero__details">
           <h2>{user.email}</h2>
+          <Button>Sign Out</Button>
         </div>
       </div>
     </div>

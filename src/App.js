@@ -3,12 +3,13 @@ import HomeScreen from "./containers/Home";
 import { Route, Routes } from "react-router-dom";
 import LoginScreen from "./containers/Login";
 import { auth } from "./firebase";
-import { useDispatch, useSelector } from "react-redux";
-import { selectUser, signIn, signOut } from "./features/userSlice";
+import { useDispatch } from "react-redux";
+import { signIn, signOut } from "./features/userSlice";
 import ProfileScreen from "./containers/Profile";
+import useUser from "./hooks/useUser";
 
 function App() {
-  const user = useSelector(selectUser);
+  const user = useUser();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,12 +28,16 @@ function App() {
     return unsubscribe;
   }, []);
 
-  if (!user) return <LoginScreen />;
-
   return (
     <Routes>
-      <Route path="" element={<HomeScreen />} />
-      <Route path="/profile" element={<ProfileScreen />} />
+      {!user ? (
+        <Route path="/signin" element={<LoginScreen />} />
+      ) : (
+        <>
+          <Route path="" element={<HomeScreen />} />
+          <Route path="/profile" element={<ProfileScreen />} />
+        </>
+      )}
     </Routes>
   );
 }
