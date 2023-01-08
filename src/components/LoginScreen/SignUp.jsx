@@ -15,10 +15,6 @@ const SignUp = () => {
   const register = (e) => {
     const email = emailInput.current.value;
     const password = passwordInput.current.value;
-
-    console.log(`Email: ${email}`);
-    console.log(`Password: ${password}`);
-
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
@@ -35,8 +31,6 @@ const SignUp = () => {
     e.preventDefault();
     const email = emailInput.current.value;
     const password = passwordInput.current.value;
-    console.log(`Email: ${email}`);
-    console.log(`Password: ${password}`);
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {

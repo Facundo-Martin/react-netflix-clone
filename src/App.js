@@ -9,7 +9,6 @@ import { selectUser, signIn, signOut } from "./features/userSlice";
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  console.log("app", user);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
@@ -20,14 +19,12 @@ function App() {
             email: userAuth.email,
           })
         );
-        console.log("signIn");
       } else {
         dispatch(signOut());
       }
     });
     return unsubscribe;
   }, []);
-  console.log("user", user);
 
   if (!user) return <LoginScreen />;
 
