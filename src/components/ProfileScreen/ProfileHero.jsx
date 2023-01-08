@@ -1,4 +1,5 @@
 import React from "react";
+import { auth } from "../../firebase";
 import useUser from "../../hooks/useUser";
 import Button from "../UI/Button";
 
@@ -6,6 +7,10 @@ import "./ProfileHero.css";
 
 const ProfileHero = () => {
   const user = useUser();
+  const signOut = () => {
+    console.log("signing out", auth, auth.signOut);
+    auth.signOut();
+  };
   console.log(user, "User");
 
   return (
@@ -19,7 +24,8 @@ const ProfileHero = () => {
         />
         <div className="profilehero__details">
           <h2>{user.email}</h2>
-          <Button>Sign Out</Button>
+          <Button onClick={signOut}>Sign Out</Button>
+          <button onClick={() => auth.signOut}>Sign Out</button>
         </div>
       </div>
     </div>

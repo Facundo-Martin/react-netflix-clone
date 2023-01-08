@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import HomeScreen from "./containers/Home";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import LoginScreen from "./containers/Login";
 import { auth } from "./firebase";
 import { useDispatch } from "react-redux";
@@ -11,6 +11,7 @@ import useUser from "./hooks/useUser";
 function App() {
   const user = useUser();
   const dispatch = useDispatch();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
@@ -26,18 +27,21 @@ function App() {
       }
     });
     return unsubscribe;
-  }, []);
+  }, [dispatch]);
+
+  if (!user && pathname !== "/signin") {
+    return <Navigate to="/signin" />;
+  }
+
+  if (user && pathname == "/signin") {
+    return <Navigate to="/" />;
+  }
 
   return (
     <Routes>
-      {!user ? (
-        <Route path="/signin" element={<LoginScreen />} />
-      ) : (
-        <>
-          <Route path="" element={<HomeScreen />} />
-          <Route path="/profile" element={<ProfileScreen />} />
-        </>
-      )}
+      <Route path="/signin" element={<LoginScreen />} />
+      <Route path="" element={<HomeScreen />} />
+      <Route path="/profile" element={<ProfileScreen />} />
     </Routes>
   );
 }
