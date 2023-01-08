@@ -4,3 +4,4 @@ export { default as Row } from "./HomeScreen/Row";
 
 export { default as LoginLayout } from "./LoginScreen/LoginLayout";
 export { default as LoginHeader } from "./LoginScreen/LoginHeader";
+export { default as SignUp } from "./LoginScreen/SignUp";
