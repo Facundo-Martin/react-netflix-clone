@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import useDebouncedEvent from "../../hooks/useDebouncedEvent";
 import "./Nav.css";
 
@@ -16,16 +17,20 @@ const Navbar = () => {
   return (
     <div className={clsx("nav", show && "nav__black")}>
       <div className="nav__contents">
-        <img
-          className="nav__logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
-          alt="Netflix logo"
-        />
-        <img
-          className="nav__avatar"
-          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-          alt="Netflix logo"
-        />
+        <Link to="/">
+          <img
+            className="nav__logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
+            alt="Netflix logo"
+          />
+        </Link>
+        <Link to="/profile">
+          <img
+            className="nav__avatar"
+            src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+            alt="Netflix logo"
+          />
+        </Link>
       </div>
     </div>
   );
