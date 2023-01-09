@@ -6,7 +6,7 @@
 
 .profilehero__container {
   display: flex;
-  width: 550px;
+  width: 650px;
   margin-top: 1rem;
   gap: 2rem;
 }
@@ -27,6 +27,16 @@
 .profilehero__subscription-plan {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   margin: 15px 0;
+}
+
+.profilehero__subscription-plan__description {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
+}
+
+.profilehero__subscription-plan__description > span {
+  font-size: 0.8rem;
 }

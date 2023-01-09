@@ -28,8 +28,14 @@ const ProfileHero = () => {
           <h4>Subscription Plans</h4>
           <div className="profilehero__subscription-plan">
             <div>
-              <p>Netflix Premium</p>
-              <span style={{ fontSize: ".8rem" }}>Movies & TV Shows</span>
+              <p>Premium Plan</p>
+              <div className="profilehero__subscription-plan__description">
+                <span>✓ Watch on 4 supported devices at a time</span>
+                <span>✓ Unlimited movies, TV shows, and mobile games</span>
+                <span>✓ Watch in Ultra HD</span>
+                <span>✓ Ad-free TV shows and movies</span>
+                <span>✓ Download on 4 supported devices at a time</span>
+              </div>
             </div>
             <Button style={{ padding: "8px 12px", fontSize: ".8rem" }}>
               Subscribe
@@ -37,8 +43,14 @@ const ProfileHero = () => {
           </div>
           <div className="profilehero__subscription-plan">
             <div>
-              <p>Netflix Basic</p>
-              <span style={{ fontSize: ".8rem" }}>Movies</span>
+              <p>Standard Plan</p>
+              <div className="profilehero__subscription-plan__description">
+                <span>✓ Watch on 2 supported devices at a time</span>
+                <span>✓ Unlimited movies, TV shows, and mobile games</span>
+                <span>✓ Watch in Full HD</span>
+                <span>✓ Ad-free TV shows and movies</span>
+                <span>✓ Download on 2 supported devices at a time</span>
+              </div>
             </div>
             <Button style={{ padding: "8px 12px", fontSize: ".8rem" }}>
               Subscribe
@@ -46,8 +58,14 @@ const ProfileHero = () => {
           </div>
           <div className="profilehero__subscription-plan">
             <div>
-              <p>Free Plan</p>
-              <span style={{ fontSize: ".8rem" }}>14-day trial</span>
+              <p>Basic Plan</p>
+              <div className="profilehero__subscription-plan__description">
+                <span>✓ Watch on 1 supported device at a time</span>
+                <span>✓ Unlimited movies, TV shows, and mobile games</span>
+                <span>✓ Watch in HD</span>
+                <span>✓ Ad-free TV shows and movies</span>
+                <span>✓ Download on 1 supported device at a time</span>
+              </div>
             </div>
             <Button
               style={{
