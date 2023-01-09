@@ -1,0 +1,16 @@
+.plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin: 15px 0;
+}
+
+.plan__description {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
+}
+
+.plan__description > span {
+  font-size: 0.8rem;
+}

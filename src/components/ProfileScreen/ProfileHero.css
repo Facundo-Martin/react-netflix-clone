@@ -23,20 +23,3 @@
 .profilehero__details {
   flex: 1;
 }
-
-.profilehero__subscription-plan {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  margin: 15px 0;
-}
-
-.profilehero__subscription-plan__description {
-  display: flex;
-  flex-direction: column;
-  margin-top: 6px;
-}
-
-.profilehero__subscription-plan__description > span {
-  font-size: 0.8rem;
-}
