@@ -15,7 +15,7 @@ const ProfileHero = () => {
 
   return (
     <div className="profilehero">
-      <h1>Edit Profile</h1>
+      <h1>Profile</h1>
       <div className="profilehero__container">
         <img
           className="profilehero__avatar"
@@ -23,9 +23,48 @@ const ProfileHero = () => {
           alt="Netflix logo"
         />
         <div className="profilehero__details">
-          <h2>{user.email}</h2>
-          <Button onClick={signOut}>Sign Out</Button>
-          <button onClick={() => auth.signOut}>Sign Out</button>
+          <h3>{user.email}</h3>
+
+          <h4>Subscription Plans</h4>
+          <div className="profilehero__subscription-plan">
+            <div>
+              <p>Netflix Premium</p>
+              <span style={{ fontSize: ".8rem" }}>Movies & TV Shows</span>
+            </div>
+            <Button style={{ padding: "8px 12px", fontSize: ".8rem" }}>
+              Subscribe
+            </Button>
+          </div>
+          <div className="profilehero__subscription-plan">
+            <div>
+              <p>Netflix Basic</p>
+              <span style={{ fontSize: ".8rem" }}>Movies</span>
+            </div>
+            <Button style={{ padding: "8px 12px", fontSize: ".8rem" }}>
+              Subscribe
+            </Button>{" "}
+          </div>
+          <div className="profilehero__subscription-plan">
+            <div>
+              <p>Free Plan</p>
+              <span style={{ fontSize: ".8rem" }}>14-day trial</span>
+            </div>
+            <Button
+              style={{
+                padding: "8px 12px",
+                fontSize: ".8rem",
+                backgroundColor: "grey",
+              }}
+            >
+              Current plan
+            </Button>
+          </div>
+          <Button
+            style={{ width: "100%", marginTop: "20px" }}
+            onClick={signOut}
+          >
+            Sign Out
+          </Button>
         </div>
       </div>
     </div>

@@ -29,12 +29,11 @@ function App() {
     return unsubscribe;
   }, [dispatch]);
 
-  if (!user && pathname !== "/signin") {
-    return <Navigate to="/signin" />;
-  }
-
   if (user && pathname == "/signin") {
     return <Navigate to="/" />;
+  }
+  if (!user && pathname !== "/signin") {
+    return <Navigate to="/signin" />;
   }
 
   return (

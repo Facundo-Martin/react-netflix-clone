@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../UI/Button";
 import "./LoginHeader.css";
 
 const LoginHeader = ({ setSignIn }) => {
@@ -13,12 +14,7 @@ const LoginHeader = ({ setSignIn }) => {
       <div className="loginHeader__input">
         <form action="">
           <input type="email" placeholder="Email Address" />
-          <button
-            className="loginHeader__button"
-            onClick={() => setSignIn(true)}
-          >
-            GET STARTED
-          </button>
+          <Button onClick={() => setSignIn(true)}>GET STARTED</Button>
         </form>
       </div>
     </div>

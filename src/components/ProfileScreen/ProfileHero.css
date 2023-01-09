@@ -1,5 +1,32 @@
 .profilehero {
   padding-top: 200px;
   margin: 0 auto;
-  max-width: 450px;
+  width: 600px;
+}
+
+.profilehero__container {
+  display: flex;
+  width: 550px;
+  margin-top: 1rem;
+  gap: 2rem;
+}
+.profilehero__container > img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.profilehero__details > h4 {
+  margin: 15px 0 20px;
+  text-decoration: underline;
+}
+.profilehero__details {
+  flex: 1;
+}
+
+.profilehero__subscription-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
 }
