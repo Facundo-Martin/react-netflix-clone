@@ -1,9 +1,62 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../UI/Button";
+import { db } from "../../firebase";
+import {
+  doc,
+  onSnapshot,
+  collection,
+  query,
+  where,
+  getDocs,
+  collectionGroup,
+} from "firebase/firestore";
 
 import "./Plans.css";
 
 const Plans = () => {
+  const [plans, setPlans] = useState([]);
+
+  useEffect(() => {
+    // const fetchProducts = async () => {
+    //   const productsRef = collection(db, "products");
+    //   const q = query(productsRef, where("active", "==", true));
+    //   const querySnapshot = await getDocs(q);
+
+    //   querySnapshot.forEach(async (doc) => {
+    //     // doc.data() is never undefined for query doc snapshots
+    //     const priceRef = productsRef.doc(doc.id);
+
+    //     // const price = await priceRef.listCollections();
+    //     console.log("TESTING", doc.id);
+    //     console.log(doc.id, " => ", doc.data());
+    //   });
+    // };
+    // fetchProducts();
+
+    const fetchPrice = async () => {
+      const prices = await getDocs(collectionGroup(db, "products"));
+      console.log("testing this shit", prices);
+    };
+
+    fetchPrice();
+
+    // db.collection("products")
+    //   .where("active", "==", true)
+    //   .onSnapshot((querySnapshot) => {
+    //     const products = {};
+    //     querySnapshot.forEach(async (productDoc) => {
+    //       products[productDoc.id] = productDoc.data();
+    //       const priceSnap = await productDoc.ref.collection("prices").get();
+    //       priceSnap.docs.forEach((price) => {
+    //         products[productDoc.id].prices = {
+    //           priceId: price.id,
+    //           priceData: price.data(),
+    //         };
+    //       });
+    //     });
+    //   });
+  }, []);
+
   return (
     <>
       <div className="plan">
